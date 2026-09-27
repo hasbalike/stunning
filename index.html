@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>stunning.nfts — onchain portfolio</title>
+<meta name="description" content="stunning.nfts — a curated onchain portfolio. Art, PFPs and game assets held across two wallets." />
+<meta property="og:title" content="stunning.nfts" />
+<meta property="og:description" content="A curated onchain portfolio. Art, PFPs and game assets." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stunning.nfts/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#06060a" />
+<link rel="canonical" href="https://stunning.nfts/" />
+<link rel="me" href="https://opensea.io/0xd83ceeb78c3b94eda193a34c1298847afc5b89ba" />
+<link rel="me" href="https://opensea.io/0x6d172b55c95393285a1750da13b9c4bf968e4ea2" />
+<link rel="me" href="https://etherscan.io/address/0xd83ceeb78c3b94eda193a34c1298847afc5b89ba" />
+<link rel="me" href="https://etherscan.io/address/0x6d172b55c95393285a1750da13b9c4bf968e4ea2" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "stunning.nfts",
+  "url": "https://stunning.nfts/",
+  "description": "A curated onchain collection - generative art, PFP identities and game assets held across two wallets.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "stunning.nfts",
+    "url": "https://stunning.nfts/",
+    "identifier": [
+      { "@type": "PropertyValue", "name": "Ethereum", "value": "0xd83ceeb78c3b94eda193a34c1298847afc5b89ba" },
+      { "@type": "PropertyValue", "name": "Ethereum", "value": "0x6d172b55c95393285a1750da13b9c4bf968e4ea2" }
+    ],
+    "sameAs": [
+      "https://opensea.io/0xd83ceeb78c3b94eda193a34c1298847afc5b89ba",
+      "https://opensea.io/0x6d172b55c95393285a1750da13b9c4bf968e4ea2",
+      "https://etherscan.io/address/0xd83ceeb78c3b94eda193a34c1298847afc5b89ba",
+      "https://etherscan.io/address/0x6d172b55c95393285a1750da13b9c4bf968e4ea2"
+    ]
+  }
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%92%8E</text></svg>" />
+<link rel="preconnect" href="https://i2c.seadn.io" crossorigin />
+<link rel="preconnect" href="https://raw2.seadn.io" crossorigin />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="brand" href="#top">
+    <span class="dot"></span>
+    <span>stunning<em>.nfts</em></span>
+  </a>
+  <nav class="links">
+    <a href="#wallets">Wallets</a>
+    <a href="#collections">Collections</a>
+    <a href="#tokens">Tokens</a>
+    <a class="btn-ghost" href="https://opensea.io/0xd83ceeb78c3b94eda193a34c1298847afc5b89ba" target="_blank" rel="noopener">OpenSea ↗</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="eyebrow"><span class="live"></span> onchain &amp; verified</p>
+    <h1>Stunning<span class="grad">.</span>nfts</h1>
+    <p class="lede">
+      A curated onchain collection — generative art, PFP identities and game assets
+      held across two wallets. Everything below is pulled straight from public chain data.
+    </p>
+
+    <div class="cta">
+      <a class="btn" href="#collections">Enter the gallery</a>
+      <a class="btn-ghost" href="#wallets">Inspect wallets</a>
+    </div>
+
+    <div class="stats" id="heroStats">
+      <div class="stat"><span class="k" data-stat="nfts">0</span><span class="l">NFTs held</span></div>
+      <div class="stat"><span class="k" data-stat="collections">0</span><span class="l">Collections</span></div>
+      <div class="stat"><span class="k" data-stat="nftValue">$0</span><span class="l">NFT value</span></div>
+      <div class="stat"><span class="k" data-stat="tokenValue">$0</span><span class="l">Liquid tokens</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="wallets">
+    <div class="sec-head">
+      <h2>Wallets</h2>
+      <p>Two addresses. Full transparency, nothing hidden.</p>
+    </div>
+    <div class="wallet-grid" id="walletGrid"></div>
+  </section>
+
+  <section class="section" id="collections">
+    <div class="sec-head">
+      <h2>Collections</h2>
+      <p>Sorted by floor value held. Click an image to enlarge, or open it on OpenSea.</p>
+    </div>
+
+    <div class="toolbar">
+      <div class="filters" id="filters"></div>
+      <div class="sorts">
+        <label for="sortBy">Sort</label>
+        <select id="sortBy">
+          <option value="usd">Value ↓</option>
+          <option value="count">Items ↓</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="cards" id="cards"></div>
+    <p class="empty" id="emptyMsg" hidden>No collections in this category.</p>
+  </section>
+
+  <section class="section" id="tokens">
+    <div class="sec-head">
+      <h2>Tokens</h2>
+      <p>Non-NFT balances across every chain touched by these wallets.</p>
+    </div>
+    <div class="token-wrap" id="tokenList"></div>
+  </section>
+
+  <section class="section cta-end">
+    <div class="glass">
+      <h3>Own something worth showing?</h3>
+      <p>OpenSea collection offers are live on most of these assets.</p>
+      <div class="cta">
+        <a class="btn" href="https://opensea.io/0xd83ceeb78c3b94eda193a34c1298847afc5b89ba" target="_blank" rel="noopener">View main wallet</a>
+        <a class="btn-ghost" href="https://opensea.io/0x6d172b55c95393285a1750da13b9c4bf968e4ea2" target="_blank" rel="noopener">View second wallet</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <span class="brand small"><span class="dot"></span><span>stunning<em>.nfts</em></span></span>
+    <p class="muted">Data snapshot from OpenSea. Not investment advice. Onchain data is public and always changing.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <img id="lbImg" alt="" />
+  <p id="lbCap"></p>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
